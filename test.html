@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<style>
+			#outer{
+				width: 500px;
+				height: 500px;
+				background-color: aqua;
+				position: absolute;
+				top: 100px;
+				left: 500px;
+			}
+			#inner{
+				width: 50px;
+				height: 50px;
+				background-color: darkblue;
+				position: absolute;
+			}
+		</style>
+		</head>
+	<body>
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li  class="active"><a href="#home"  role="tab" data-toggle="tab">Home</a></li>
+    <li ><a href="#profile"  role="tab" data-toggle="tab">Profile</a></li>
+    <li ><a href="#messages"  role="tab" data-toggle="tab">Messages</a></li>
+    <li ><a href="#settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">efwsf</div>
+    <div role="tabpanel" class="tab-pane" id="profile">wewfwefwe.</div>
+    <div role="tabpanel" class="tab-pane" id="messages">.wefwefewe..</div>
+    <div role="tabpanel" class="tab-pane" id="settings">wefwe3223232323...</div>
+  </div>
+
+</div>
+
+<div id="outer">
+	<div id="inner">
+		
+	</div>
+</div>
+		
+		<script src="js/jquery-1.10.1.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function(){
+				/*
+					#outer
+					top: 100px;
+					left: 500px;
+				*/ 
+				$('#outer').mousemove(function(event){
+					var eventX=event.offsetX
+					var eventY=event.offsetY
+					var left=0
+					var top=0
+					var innerWidth=$('#inner').width()
+					var innerHight=$('#inner').height()
+					console.log('基于设置目标offsetX:'+eventX)
+					console.log('基于设置目标offsetY:'+eventY)
+					console.log('可视窗口clientX:'+event.clientX)
+					console.log('可视窗口clientY:'+event.clientY)
+					
+					var left=eventX-innerWidth/2
+					var top=eventY-innerHight/2
+					$('#inner').css({
+					'left':left,
+					'top':top
+				})
+				})
+				
+				
+			})
+		</script>
+
+	</body>
+</html>
